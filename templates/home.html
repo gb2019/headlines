@@ -1,21 +1,39 @@
 <html>
-    <head>
-        <title>Headlines</title>
+
+    <!-- styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Headlines</title>
+    <style>
+        div{
+        padding-left:70px;
+        padding-right:100px;
+    }
+    </style>
+
+
+
     </head>
 
     <body>
-        <h1>Headlines</h1>
-        <form>
-        <input type="text" name="publication" placeholder="search" />
-        <input type="submit" value="Submit" />
-    </form>
+       <div>
+            <h1>Headlines</h1>
+            <form>
+                <input type="text" name="publication" placeholder="search" />
+                <input type="submit" value="Submit" />
+            </form>
 
 
-        {% for article in articles %}
-            <b><a href="{{article.link}}">{{article.title}}</a></b><br />
-            <i>{{article.published}}</i><br/>
-            <p>{{article.summary}}</p>
-            <hr />
-        {% endfor %}
+            {% for article in articles %}
+                <b><a href="{{article.link}}">{{article.title}}</a></b><br />
+                <i>{{article.published}}</i><br/>
+                <p>{{article.summary}}</p>
+                <hr />
+            {% endfor %}
+        </div>
+
+    <!-- scripts -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </body>
 </html>
